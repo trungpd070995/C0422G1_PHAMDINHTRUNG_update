@@ -10,11 +10,6 @@ CREATE TABLE customer (
     c_age INT
 );
 
-INSERT INTO customer (c_id , c_name , c_age) VALUES
-(1, 'Minh Quan' , 10),
-(2, 'Ngoc Oanh' , 20),
-(3, 'Hong Ha' , 50);
-
 CREATE TABLE `order` (
     o_id INT PRIMARY KEY,
     c_id INT,
@@ -24,23 +19,11 @@ CREATE TABLE `order` (
         REFERENCES customer (c_id)
 );
 
-INSERT INTO `order` (o_id , c_id , o_date , o_total_price) VALUES
-(1, 1, '2006-07-21',NULL),
-(2, 2, '2006-07-23',NULL),
-(3, 1, '2006-07-16',NULL);
-
 CREATE TABLE product (
     p_id INT PRIMARY KEY,
     p_name VARCHAR(50),
     p_price INT
 );
-
-INSERT INTO product (p_id , p_name , p_price) VALUES
-(1, 'May Giat', 3),
-(2, 'Tu Lanh', 5),
-(3, 'Dieu Hoa', 7),
-(4, 'Quat', 1),
-(5, 'Bep Dien', 2);
 
 CREATE TABLE order_detail (
     o_id INT,
@@ -52,6 +35,22 @@ CREATE TABLE order_detail (
     FOREIGN KEY (p_id)
         REFERENCES product (p_id)
 );
+INSERT INTO customer (c_id , c_name , c_age) VALUES
+(1, 'Minh Quan' , 10),
+(2, 'Ngoc Oanh' , 20),
+(3, 'Hong Ha' , 50);
+
+INSERT INTO `order` (o_id , c_id , o_date , o_total_price) VALUES
+(1, 1, '2006-07-21',NULL),
+(2, 2, '2006-07-23',NULL),
+(3, 1, '2006-07-16',NULL);
+
+INSERT INTO product (p_id , p_name , p_price) VALUES
+(1, 'May Giat', 3),
+(2, 'Tu Lanh', 5),
+(3, 'Dieu Hoa', 7),
+(4, 'Quat', 1),
+(5, 'Bep Dien', 2);
 
 INSERT INTO order_detail (o_id, p_id, od_qty) VALUES
 (1 ,1, 3),

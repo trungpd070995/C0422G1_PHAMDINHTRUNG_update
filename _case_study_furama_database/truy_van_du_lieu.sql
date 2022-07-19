@@ -6,9 +6,8 @@ SELECT
 FROM
     nhan_vien
 WHERE
-    ho_ten LIKE 'H%' OR ho_ten LIKE 'T%'
-        OR ho_ten LIKE 'K%'
-        AND CHAR_LENGTH(ho_ten) < 15;
+    ho_ten LIKE 'H%' OR ho_ten LIKE 'T%' OR ho_ten LIKE 'K%'
+        AND CHAR_LENGTH(ho_ten) <= 15;
 
 -- TASK - 3 : Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
 SELECT 
@@ -78,14 +77,18 @@ FROM
     loai_dich_vu ON loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_loai_dich_vu
         JOIN
     hop_dong ON hop_dong.ma_dich_vu = dich_vu.ma_dich_vu
-    
-WHERE hop_dong.ma_dich_vu NOT IN( 
-	SELECT hop_dong.ma_dich_vu
-	WHERE YEAR(hop_dong.ngay_lam_hop_dong) = 2021 AND ( MONTH(hop_dong.ngay_lam_hop_dong)BETWEEN 1 AND 3)
-GROUP BY hop_dong.ma_dich_vu);
+WHERE
+    hop_dong.ma_dich_vu NOT IN (SELECT 
+            hop_dong.ma_dich_vu
+        FROM
+            hop_dong
+        WHERE
+            YEAR(hop_dong.ngay_lam_hop_dong) = 2021
+                AND (MONTH(hop_dong.ngay_lam_hop_dong) BETWEEN 1 AND 3))
+GROUP BY ma_dich_vu;
 
 -- TASK - 7 : Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ 
--- đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.
+-- đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021. 
 SELECT 
     dich_vu.ma_dich_vu,
     dich_vu.ten_dich_vu,
@@ -105,19 +108,21 @@ SELECT YEAR(hop_dong.ngay_lam_hop_dong)
 WHERE YEAR(hop_dong.ngay_lam_hop_dong) = 2021);
 
 -- TASK - 8 : Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
+-- Sai logic 
 SELECT 
     khach_hang.ho_va_ten
 FROM
     khach_hang
 GROUP BY khach_hang.ho_va_ten 
-
-UNION SELECT 
+UNION 
+SELECT 
     khach_hang.ho_va_ten
 FROM
     khach_hang
 GROUP BY khach_hang.ho_va_ten;
 
 -- TASK - 9 : Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+
 SELECT 
     MONTH(ngay_lam_hop_dong) AS thang,
     COUNT(hop_dong.ma_khach_hang) AS so_luong_khach_thue
@@ -130,6 +135,7 @@ ORDER BY thang;
 
 -- TASK - 10 : Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. Kết quả hiển thị bao gồm 
 -- ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
+
 SELECT 
     hop_dong.ma_hop_dong,
     hop_dong.ngay_lam_hop_dong,
