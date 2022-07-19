@@ -67,16 +67,28 @@ VALUES
 (2, 1, 12, 1);
 
 -- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’
-select * from student
-where student_name like "H%";
+SELECT 
+    *
+FROM
+    student
+WHERE
+    student_name LIKE 'H%';
 
 -- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
-select * from class
-where month(start_day) = 12;
+SELECT 
+    *
+FROM
+    class
+WHERE
+    MONTH(start_day) = 12;
 
 -- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5
-select * from `subject`
-where credit between 3 and 5;
+SELECT 
+    *
+FROM
+    `subject`
+WHERE
+    credit BETWEEN 3 AND 5;
 
 -- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
 SET SQL_SAFE_UPDATES = 0;
