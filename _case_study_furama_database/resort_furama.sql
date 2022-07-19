@@ -4,23 +4,23 @@ CREATE DATABASE resort_furama;
 
 USE resort_furama;
 
-CREATE TABLE vi_tri (
-    ma_vi_tri INT PRIMARY KEY,
+CREATE TABLE vi_tri(
+	ma_vi_tri INT PRIMARY KEY,
     ten_vi_tri VARCHAR(45)
 );
 
-CREATE TABLE trinh_do (
-    ma_trinh_do INT PRIMARY KEY,
+CREATE TABLE trinh_do(
+	ma_trinh_do INT PRIMARY KEY,
     ten_trinh_do VARCHAR(45)
 );
 
-CREATE TABLE bo_phan (
-    ma_bo_phan INT PRIMARY KEY,
+CREATE TABLE bo_phan(
+	ma_bo_phan INT PRIMARY KEY,
     ten_bo_phan VARCHAR(45)
 );
 
-CREATE TABLE nhan_vien (
-    ma_nhan_vien INT PRIMARY KEY,
+CREATE TABLE nhan_vien(
+	ma_nhan_vien INT PRIMARY KEY,
     ho_ten VARCHAR(45),
     ngay_sinh DATE,
     so_cmnd VARCHAR(45),
@@ -31,22 +31,18 @@ CREATE TABLE nhan_vien (
     ma_vi_tri INT,
     ma_trinh_do INT,
     ma_bo_phan INT,
-    FOREIGN KEY (ma_vi_tri)
-        REFERENCES vi_tri (ma_vi_tri),
-    FOREIGN KEY (ma_trinh_do)
-        REFERENCES trinh_do (ma_trinh_do),
-    FOREIGN KEY (ma_bo_phan)
-        REFERENCES bo_phan (ma_bo_phan)
+    FOREIGN KEY (ma_vi_tri) REFERENCES vi_tri (ma_vi_tri),
+    FOREIGN KEY (ma_trinh_do) REFERENCES trinh_do (ma_trinh_do),
+    FOREIGN KEY (ma_bo_phan) REFERENCES bo_phan (ma_bo_phan)
 );
 
-CREATE TABLE loai_khach (
-    ma_loai_khach INT PRIMARY KEY,
+CREATE TABLE loai_khach(
+	ma_loai_khach INT PRIMARY KEY,
     ten_loai_khach VARCHAR(45)
 );
 
-CREATE TABLE khach_hang (
-    ma_khach_hang INT PRIMARY KEY,
-    ma_loai_khach INT,
+CREATE TABLE khach_hang(
+	ma_khach_hang INT PRIMARY KEY,
     ho_va_ten VARCHAR(45),
     ngay_sinh DATE,
     gioi_tinh BIT(1),
@@ -54,7 +50,8 @@ CREATE TABLE khach_hang (
     so_dien_thoai VARCHAR(45),
     email VARCHAR(45),
     dia_chi VARCHAR(45),
-    foreign key (ma_loai_khach) references loai_khach(ma_loai_khach)
+	ma_loai_khach INT,
+    FOREIGN KEY (ma_loai_khach) REFERENCES loai_khach (ma_loai_khach)
 );
 
 CREATE TABLE kieu_thue(
@@ -93,20 +90,17 @@ CREATE TABLE dich_vu_di_kem(
     trang_thai VARCHAR(45)
 );
 
-CREATE TABLE hop_dong (
-    ma_hop_dong INT PRIMARY KEY,
+CREATE TABLE hop_dong(
+	ma_hop_dong INT PRIMARY KEY,
     ngay_lam_hop_dong DATETIME,
     ngay_ket_thuc DATETIME,
     tien_dat_coc DOUBLE,
     ma_nhan_vien INT,
     ma_khach_hang INT,
     ma_dich_vu INT,
-    FOREIGN KEY (ma_nhan_vien)
-        REFERENCES nhan_vien (ma_nhan_vien),
-    FOREIGN KEY (ma_khach_hang)
-        REFERENCES khach_hang (ma_khach_hang),
-    FOREIGN KEY (ma_dich_vu)
-        REFERENCES dich_vu (ma_dich_vu)
+    FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien (ma_nhan_vien),
+    FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang (ma_khach_hang),
+    FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu (ma_dich_vu)
 );
 
 CREATE TABLE hop_dong_chi_tiet (
@@ -120,6 +114,7 @@ CREATE TABLE hop_dong_chi_tiet (
         REFERENCES dich_vu_di_kem (ma_dich_vu_di_kem)
 );
 
+-- TASK 1: 
 -- Thêm mới Vị trí
 insert into vi_tri values (1,'Quản lý');
 insert into vi_tri values (2,'Nhân viên');
