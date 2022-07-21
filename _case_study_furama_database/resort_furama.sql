@@ -99,7 +99,7 @@ CREATE TABLE hop_dong(
     ma_khach_hang INT,
     ma_dich_vu INT,
     FOREIGN KEY (ma_nhan_vien) REFERENCES nhan_vien (ma_nhan_vien),
-    FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang (ma_khach_hang),
+    FOREIGN KEY (ma_khach_hang) REFERENCES khach_hang (ma_khach_hang) ON DELETE SET NULL,
     FOREIGN KEY (ma_dich_vu) REFERENCES dich_vu (ma_dich_vu)
 );
 
