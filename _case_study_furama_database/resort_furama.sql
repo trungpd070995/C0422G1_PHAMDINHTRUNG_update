@@ -211,4 +211,4 @@ insert into hop_dong_chi_tiet values (4, 1, 3, 1);
 insert into hop_dong_chi_tiet values (5, 11, 3, 2);
 insert into hop_dong_chi_tiet values (6, 1, 1, 3);
 insert into hop_dong_chi_tiet values (7, 2, 1, 2);
-insert into hop_dong_chi_tiet values (8, 2, 1, 2);
+insert into hop_dong_chi_tiet values (8, 2, 12, 2);
