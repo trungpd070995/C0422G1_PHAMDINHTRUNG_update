@@ -1,0 +1,9 @@
+/*Nhúng Css từ file bên ngoài vào*/
+
+#line1{
+    color: green;
+}
+
+.line2{
+    color: red;
+}

@@ -151,12 +151,12 @@ WHERE
 SELECT 
     faculty.faculty_id,
     faculty_name,
-    SUM(instructor.instructor_id) AS so_giang_vien
+    count(instructor.instructor_id) AS so_giang_vien
 FROM
     faculty
         JOIN
     instructor ON faculty.faculty_id = instructor.faculty_id
-GROUP BY instructor.instructor_id;
+GROUP BY faculty.faculty_id;
 
 -- 8.	Cho biết số điện thoại của khoa mà sinh viên có tên ‘Le van son’ đang theo học
 SELECT 
@@ -164,5 +164,5 @@ SELECT
 FROM
     faculty
     join student on faculty.faculty_id = student.faculty_id
-    where student_name = "Le van son";
+where student_name = "Le van son";
 
