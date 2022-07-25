@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <link rel="stylesheet" type="text/css" href="index.css">-->
+    <style>
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        .header {
+            background-color: red;
+            color: aliceblue;
+            padding: 5px;
+        }
+
+        .footer {
+            background-color: red;
+            color: aliceblue;
+            padding: 5px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .menu-right {
+            background-color: #CDCDCD;
+            height: 450px;
+            padding: 10px;
+        }
+
+        .menu-left {
+            background-color: darkgrey;
+            height: 450px;
+        }
+
+        nav ul {
+            background-color: red;
+            color: aliceblue;
+            padding: 5px;
+            text-align: center;
+        }
+
+        li {
+            display: inline;
+            margin: 5px;
+        }
+
+        .navbar-menu {
+            background-color: sienna;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="row header">
+    <div class="col-12">
+        <h1>Shopee</h1>
+        <input id="input" type="text" name="nhập" placeholder="Tìm kiếm mặt hàng">
+        <input type="button" name="tìm kiếm" value="Tìm kiếm">
+    </div>
+</div>
+
+<div class="row navbar-menu">
+    <div class="col-12 ">
+        <ul>
+            <li>Giày</li>
+            <li>Điện thoại</li>
+            <li>Áo quần</li>
+            <li>Túi xách</li>
+            <li>Máy tính</li>
+            <li>Đàn</li>
+            <li>Sách</li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <div class="row">
+        <div class="col-4 menu-left">
+            <section>
+
+                <article>
+                    <h2>Theo Danh Mục</h2>
+                    <input type="radio" name="Theo Danh Mục" value="Điện thoại">Điện Thoại<br>
+                    <input type="radio" name="Theo Danh Mục" value="Phụ kiện ">Phụ kiện <br>
+                    <input type="radio" name="Theo Danh Mục" value="Áo-Quần">Áo-Quần<br>
+                    <input type="radio" name="Theo Danh Mục" value="Túi Xách">Túi Xách Hàng Hiệu<br>
+                    <input type="radio" name="Theo Danh Mục" value="Mặt hàng khác">Mặt hàng khác<br>
+                </article>
+                <hr>
+
+                <article>
+                    <h2>Nơi bán</h2>
+                    <input type="radio" name="Nơi bán" value="Hà Nội">Hà Nội<br>
+                    <input type="radio" name="Nơi bán" value="TP.Hồ Chí Minh">TP.Hồ Chí Minh<br>
+                    <input type="radio" name="Nơi bán" value="Đà Nẵng">Đà Nẵng<br>
+                    <input type="radio" name="Nơi bán" value="Huế">Huế<br>
+                    <input type="radio" name="Nơi bán" value="Quảng Bình">Quảng Bình<br>
+                </article>
+            </section>
+        </div>
+
+        <div class="col-8 menu-right">
+            <div class="col-12" style="width: 100%">
+                <section>
+                    <aside>
+                        <h2>Các mặt hàng nổi bật</h2>
+                        <img src="https://muahohangnhat.net/wp-content/uploads/2019/04/mat-hang-dien-tu-nhat-ban-1.png "width="70%">
+                    </aside>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row footer">
+    <div class="col-12">
+        <div>Footer</div>
+    </div>
+</div>
+</body>
+</html>
