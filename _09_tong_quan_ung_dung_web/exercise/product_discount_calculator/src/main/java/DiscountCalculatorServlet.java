@@ -12,19 +12,21 @@ public class DiscountCalculatorServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
+        String describeProduct = request.getParameter("describeProduct");
         float listPrice = Float.parseFloat(request.getParameter("numberListPrice"));
         float discountPercent = Float.parseFloat(request.getParameter("numberDiscountRate"));
 
         double discountAmount = listPrice * discountPercent * 0.01;
+        double discountPrice = listPrice - discountAmount;
+
+        request.setAttribute("describeProduct", describeProduct);
         request.setAttribute("listPrice", listPrice);
         request.setAttribute("discountPercent", discountPercent);
         request.setAttribute("discountAmount", discountAmount);
+        request.setAttribute("discountPrice", discountPrice);
+
         request.getRequestDispatcher("/result.jsp").forward(request, response);
 
-//        PrintWriter writer = response.getWriter();
-//        writer.println("<html>");
-//        writer.println("<h3>Discount Amount: " + discountAmount + "</h3>");
-//        writer.println("<h3>Discount Price: " + (listPrice - discountAmount) + "</h3>");
-//        writer.println("</html>");
     }
 }

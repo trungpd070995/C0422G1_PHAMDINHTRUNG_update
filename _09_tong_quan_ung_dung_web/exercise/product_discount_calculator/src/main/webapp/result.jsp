@@ -11,8 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-<h2>listPrice: ${listPrice}</h2>
-<h2>discountPercent: ${discountPercent}</h2>
-<h2>discountAmount: ${discountAmount}</h2>
+<h2>Describe Product: ${describeProduct}</h2>
+<h2>List Price: ${listPrice}</h2>
+<h2>Discount Percent: ${discountPercent}</h2>
+<h2>Discount Amount: ${discountAmount}</h2>
+<h2>Discount Price: ${discountPrice}</h2>
+
 </body>
 </html>
