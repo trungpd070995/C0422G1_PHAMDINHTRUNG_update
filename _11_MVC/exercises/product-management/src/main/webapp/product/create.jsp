@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create new Products</title>
+    <title>Create New Products</title>
     <style>
         .message {
             color: green;
@@ -17,14 +17,14 @@
     </style>
 </head>
 <body>
-<h1>Create new products</h1>
+<h1>Create New products</h1>
 <p>
     <c:if test='${message != null}'>
         <span class="message">${message}</span>
     </c:if>
 </p>
 <p>
-    <a href="/products">Back to product list</a>
+    <a href="/products">Back to Product list</a>
 </p>
 <form method="post">
     <fieldset>

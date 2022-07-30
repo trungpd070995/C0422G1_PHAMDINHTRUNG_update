@@ -39,7 +39,7 @@
         </form>
 
         <p>
-            <a href="/products?action=create">Create new product</a>
+            <a href="/products?action=create">Create New Product</a>
         </p>
 
         <table class="table table-striped">
