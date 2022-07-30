@@ -34,7 +34,7 @@
         </div>
 
         <form action="/products">
-            <input type="text" name="nameSearch"  placeholder="Tìm Kiếm Theo Tên">
+            <input type="text" name="nameSearch" placeholder="Tìm Kiếm Theo Tên">
             <input type="submit" name="action" value="search">
         </form>
 

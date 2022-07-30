@@ -54,6 +54,6 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void delete(int id) {
-     products.remove(id);
+        products.remove(id);
     }
 }

@@ -18,11 +18,11 @@
 
         .container {
             margin: 20px 90px;
-            border: gray 1px dashed ;
+            border: gray 1px dashed;
         }
 
-        table{
-           background-color: cadetblue;
+        table {
+            background-color: cadetblue;
         }
     </style>
 </head>
@@ -41,33 +41,33 @@
             <%--    <a href="/products">Back to product list</a>--%>
         </p>
 
-            <form method="post">
-                <fieldset>
-                    <legend>Product information</legend>
-                    <table>
-                        <tr>
-                            <td>Name:</td>
-                            <td><input type="text" name="name" id="name" value="${product.name}"></td>
-                        </tr>
-                        <tr>
-                            <td>Price:</td>
-                            <td><input type="text" name="price" id="price" value="${product.price}"></td>
-                        </tr>
-                        <tr>
-                            <td>Describe:</td>
-                            <td><input type="text" name="describe" id="describe" value="${product.describe}"></td>
-                        </tr>
-                        <tr>
-                            <td>Producer:</td>
-                            <td><input type="text" name="producer" id="producer" value="${product.producer}"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input class="btn-outline-success" type="submit" value="Update product"></td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </form>
+        <form method="post">
+            <fieldset>
+                <legend>Product information</legend>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" name="name" id="name" value="${product.name}"></td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td><input type="text" name="price" id="price" value="${product.price}"></td>
+                    </tr>
+                    <tr>
+                        <td>Describe:</td>
+                        <td><input type="text" name="describe" id="describe" value="${product.describe}"></td>
+                    </tr>
+                    <tr>
+                        <td>Producer:</td>
+                        <td><input type="text" name="producer" id="producer" value="${product.producer}"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="btn-outline-success" type="submit" value="Update product"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
 
     </div>
 </div>
