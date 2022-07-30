@@ -1,6 +1,6 @@
-package model;
+package service;
 
-public class Calculator {
+public class CalculatorService {
 
     public static float calculate(float firstOperand, float secondOperand, char operator ){
         switch (operator){

@@ -1,6 +1,6 @@
 package servlet;
 
-import model.Calculator;
+import service.CalculatorService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "CalculatorServlet" , urlPatterns = "/calculate")
 public class CalculatorServlet extends HttpServlet {
@@ -16,9 +15,10 @@ public class CalculatorServlet extends HttpServlet {
 
         float firstOperand = Integer.parseInt(request.getParameter("first-operand"));
         float secondOperand = Integer.parseInt(request.getParameter("second-operand"));
+
         char operator = request.getParameter("operator").charAt(0);
 
-        float result = Calculator.calculate(firstOperand,secondOperand,operator);
+        float result = CalculatorService.calculate(firstOperand,secondOperand,operator);
 
         request.setAttribute("firstOperand", firstOperand);
         request.setAttribute("secondOperand", secondOperand);
