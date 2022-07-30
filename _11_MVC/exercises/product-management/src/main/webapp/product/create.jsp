@@ -24,11 +24,11 @@
     </c:if>
 </p>
 <p>
-    <a href="/products">Back to customer list</a>
+    <a href="/products">Back to product list</a>
 </p>
 <form method="post">
     <fieldset>
-        <legend>Customer information</legend>
+        <legend>Product information</legend>
         <table>
 
             <tr>
