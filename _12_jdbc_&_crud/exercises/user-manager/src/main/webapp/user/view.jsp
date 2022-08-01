@@ -20,19 +20,19 @@
 
     <tr>
         <td>ID:</td>
-        <td>${user.id}</td>
+        <td>${userList.id}</td>
     </tr>
     <tr>
         <td>Name:</td>
-        <td><a href="/users?action=view&id=${user.id}">${user.name}</a></td>
+        <td>${userList.name}</td>
     </tr>
     <tr>
         <td>Email:</td>
-        <td>${user.email}</td>
+        <td>${userList.email}</td>
     </tr>
     <tr>
         <td>Country:</td>
-        <td>${user.country}</td>
+        <td>${userList.country}</td>
     </tr>
 </table>
 </body>

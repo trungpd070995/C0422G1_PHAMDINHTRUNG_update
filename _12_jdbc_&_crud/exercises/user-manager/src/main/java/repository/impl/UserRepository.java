@@ -38,7 +38,23 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User selectUser(int id) {
-        return null;
+        User users = null;
+        try {
+            Connection connection = BaseRepository.getConnectDB();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID) ;
+            preparedStatement.setInt(1, id);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users = new User(id, name, email, country);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 
     @Override
@@ -80,7 +96,8 @@ public class UserRepository implements IUserRepository {
     @Override
     public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated;
-        try (Connection connection = BaseRepository.getConnectDB();
+        try (
+                Connection connection = BaseRepository.getConnectDB();
              PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getEmail());

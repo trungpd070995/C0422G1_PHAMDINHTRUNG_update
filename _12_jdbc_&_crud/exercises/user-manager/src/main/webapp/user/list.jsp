@@ -20,7 +20,7 @@
     </h2>
 
     <form>
-        <input type="text" placeholder="search" name="countrySearch">
+        <input type="text" placeholder="Tìm Kiếm" name="countrySearch">
         <input type="submit" value="search" name="action">
     </form>
 
@@ -38,7 +38,7 @@
         <c:forEach var="user" items="${listUser}">
             <tr>
                 <td><c:out value="${user.id}"/></td>
-                <td><c:out value="${user.name}"/></td>
+                <td><a href="/users?action=view&id=${user.id}">${user.name}</a></td>
                 <td><c:out value="${user.email}"/></td>
                 <td><c:out value="${user.country}"/></td>
                 <td>

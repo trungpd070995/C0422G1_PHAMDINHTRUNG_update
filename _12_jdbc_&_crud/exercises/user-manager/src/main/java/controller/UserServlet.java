@@ -55,11 +55,32 @@ public class UserServlet extends HttpServlet {
                 break;
             case "search" :
                 searchUser(request,response);
+                break;
             case "sort":
                 sortByName(request,response);
+                break;
+            case "view":
+                viewUser(request,response);
+                break;
             default:
                 listUser(request, response);
                 break;
+        }
+    }
+
+    private void viewUser(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        User userList = userService.selectUser(id);
+        RequestDispatcher dispatcher;
+            request.setAttribute("userList", userList);
+            dispatcher = request.getRequestDispatcher("user/view.jsp");
+
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

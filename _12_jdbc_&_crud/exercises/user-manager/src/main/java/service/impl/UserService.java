@@ -18,7 +18,7 @@ public class UserService implements IUserService {
 
     @Override
     public User selectUser(int id) {
-        return null;
+        return userRepository.selectUser(id);
     }
 
     @Override
