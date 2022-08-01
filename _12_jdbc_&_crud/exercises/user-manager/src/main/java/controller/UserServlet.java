@@ -67,7 +67,7 @@ public class UserServlet extends HttpServlet {
         List<User> listUser = userService.selectAllUsers();
         Collections.sort(listUser);
         request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
