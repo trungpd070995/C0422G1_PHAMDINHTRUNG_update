@@ -10,13 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/products")
 public class ProductServlet extends HttpServlet {
     private final ProductService productService = new ProductService();
-    static List<Product> product = new ArrayList<>();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
@@ -126,7 +124,7 @@ public class ProductServlet extends HttpServlet {
     private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
-        Double price = Double.parseDouble(request.getParameter("price"));
+        double price = Double.parseDouble(request.getParameter("price"));
         String describe = request.getParameter("describe");
         String producer = request.getParameter("producer");
         Product product = this.productService.finById(id);

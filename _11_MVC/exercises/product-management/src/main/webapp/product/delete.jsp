@@ -18,6 +18,7 @@
 <p>
     <a href="/products">Back to product list</a>
 </p>
+
 <form method="post">
     <h3>Are you sure?</h3>
     <fieldset>
@@ -46,6 +47,7 @@
             <tr>
                 <td><input type="submit" value="Delete product"></td>
                 <td><a href="/products">Back to Product list</a></td>
+
             </tr>
         </table>
     </fieldset>
