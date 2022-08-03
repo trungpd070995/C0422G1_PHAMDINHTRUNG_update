@@ -19,6 +19,7 @@ public class ClassStudentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        
 
         String action = request.getParameter("action");
         if (action == null) {
@@ -52,10 +53,12 @@ public class ClassStudentServlet extends HttpServlet {
     }
 
     private void listClassStudent(HttpServletRequest request, HttpServletResponse response) {
+
         List<ClassStudent> classStudents = classStudentService.findAll();
         request.setAttribute("classStudents", classStudents);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view/list.jsp");
+
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -63,16 +66,21 @@ public class ClassStudentServlet extends HttpServlet {
         }
     }
 
-    
+
     private void createClassStudent(HttpServletRequest request, HttpServletResponse response) {
+
         String idCarClass = request.getParameter("idCarClass");
         String nameClass = request.getParameter("nameClass");
         String starDayClass = request.getParameter("starDayClass");
+
         int idClass = (int) (Math.random() * 10000);
 
         ClassStudent classStudent = new ClassStudent( idClass, idCarClass, nameClass, starDayClass);
+
         classStudentService.create(classStudent);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view/create.jsp");
+
         request.setAttribute("message", "New product was created");
         try {
             dispatcher.forward(request, response);
@@ -82,7 +90,9 @@ public class ClassStudentServlet extends HttpServlet {
     }
 
     private void showCreateClassStudent(HttpServletRequest request, HttpServletResponse response) {
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");
+
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
