@@ -14,9 +14,9 @@ public class ClassStudentRepository implements IClassStudentRepository {
 
     static {
         classMap = new HashMap<>();
-        classMap.put(1, new ClassStudent(1, "CO222G1", "Sáng", "2022-03-03"));
-        classMap.put(2, new ClassStudent(2, "CO322G1", "Chiều", "2022-04-04"));
-        classMap.put(3, new ClassStudent(3, "CO422G1", "Tối", "2022-05-05"));
+        classMap.put(1, new ClassStudent(1, "CO222G1", "Java", "2022-03-03"));
+        classMap.put(2, new ClassStudent(2, "CO322G1", "PHP", "2022-04-04"));
+        classMap.put(3, new ClassStudent(3, "CO422G1", "linux", "2022-05-05"));
     }
 
     @Override
