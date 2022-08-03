@@ -41,4 +41,9 @@ public class UserService implements IUserService {
         return userRepository.searchUser(countryS);
     }
 
+    @Override
+    public User getUserById(int id) {
+        return userRepository.getUserById(id);
+    }
+
 }

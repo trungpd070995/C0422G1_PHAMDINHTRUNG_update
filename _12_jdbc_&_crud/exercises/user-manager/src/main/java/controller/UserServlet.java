@@ -34,6 +34,9 @@ public class UserServlet extends HttpServlet {
             case "edit":
                 updateUser(request, response);
                 break;
+            case "search" :
+                searchUser(request,response);
+                break;
         }
     }
 
@@ -52,9 +55,6 @@ public class UserServlet extends HttpServlet {
                 break;
             case "delete":
                 deleteUser(request, response);
-                break;
-            case "search" :
-                searchUser(request,response);
                 break;
             case "sort":
                 sortByName(request,response);
@@ -99,7 +99,7 @@ public class UserServlet extends HttpServlet {
     }
 
     private void searchUser(HttpServletRequest request, HttpServletResponse response) {
-        List<User> listUser = userService.selectAllUsers();
+        List<User> listUser;
         String countrySearch = request.getParameter("countrySearch");
         listUser = userService.searchUser(countrySearch);
         request.setAttribute("listUser", listUser);
@@ -201,7 +201,7 @@ public class UserServlet extends HttpServlet {
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        User existingUser = userService.selectUser(id);
+        User existingUser = userService.getUserById(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
         request.setAttribute("user", existingUser);
         try {

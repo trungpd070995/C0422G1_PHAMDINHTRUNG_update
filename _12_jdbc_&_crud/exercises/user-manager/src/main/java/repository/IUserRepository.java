@@ -19,4 +19,6 @@ public interface IUserRepository {
 
     List<User> searchUser(String country);
 
+    User getUserById(int id);
+
 }

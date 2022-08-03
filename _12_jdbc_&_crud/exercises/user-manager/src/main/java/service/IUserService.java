@@ -7,15 +7,18 @@ import java.util.List;
 
 public interface IUserService {
 
-     void insertUser(User user) throws SQLException;
+    void insertUser(User user) throws SQLException;
 
-     User selectUser(int id);
+    User selectUser(int id);
 
-     List<User> selectAllUsers();
+    List<User> selectAllUsers();
 
-     boolean deleteUser(int id) throws SQLException;
+    boolean deleteUser(int id) throws SQLException;
 
-     boolean updateUser(User user) throws SQLException;
+    boolean updateUser(User user) throws SQLException;
 
     List<User> searchUser(String countryS);
+
+    User getUserById(int id);
+
 }
