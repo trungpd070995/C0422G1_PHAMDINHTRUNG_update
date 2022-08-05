@@ -30,16 +30,6 @@
 
                     <table class="table" cellpadding="5">
                         <tr>
-                            <th>Customer Type:</th>
-                            <td>
-                                <select name="customerTypeID" id="customerTypeID">
-                                    <option value="">Chọn loại khách</option>
-
-                                </select>
-
-                            </td>
-                        </tr>
-                        <tr>
                             <th>Name:</th>
                             <td>
                                 <input type="text" name="name" id="name" size="45"/>
@@ -108,7 +98,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

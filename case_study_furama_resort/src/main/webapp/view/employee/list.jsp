@@ -25,7 +25,6 @@
             <table class="table text-center table-striped" id="table">
                 <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
                     <th>Birthday</th>
                     <th>ID Card</th>
@@ -45,7 +44,6 @@
                 <tbody>
 
                 <tr>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -120,16 +118,7 @@
                 <form method="post">
 
                     <table class="table" cellpadding="5">
-                        <tr>
-                            <th>Customer Type:</th>
-                            <td>
-                                <select name="customerTypeID" id="customerTypeID">
-                                    <option value="">Chọn loại khách</option>
 
-                                </select>
-
-                            </td>
-                        </tr>
                         <tr>
                             <th>Name:</th>
                             <td>
@@ -204,16 +193,7 @@
                 <form method="post">
 
                     <table class="table" cellpadding="5">
-                        <tr>
-                            <th>Customer Type:</th>
-                            <td>
-                                <select name="customerTypeID" id="customerTypeID-Edit">
-                                    <option value="">Chọn loại khách</option>
 
-                                </select>
-
-                            </td>
-                        </tr>
                         <tr>
                             <th>Name:</th>
                             <td>
@@ -272,7 +252,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <script>

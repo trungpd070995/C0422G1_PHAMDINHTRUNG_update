@@ -30,16 +30,6 @@
 
                     <table class="table" cellpadding="5">
                         <tr>
-                            <th>Customer Type:</th>
-                            <td>
-                                <select name="customerTypeID" id="customerTypeID">
-                                    <option value="">Chọn loại khách</option>
-
-                                </select>
-
-                            </td>
-                        </tr>
-                        <tr>
                             <th>Name:</th>
                             <td>
                                 <input type="text" name="name" id="name" size="45"/>
