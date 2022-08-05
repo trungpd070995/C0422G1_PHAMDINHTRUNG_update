@@ -95,14 +95,14 @@
                             </tr>
 
                             <tr>
-                                <td align="center">
-                                    <a href="#">
+                                <td >
+                                    <a href="/view/home.jsp">
                                         <button type="button" class="btn btn-primary">
                                             Back
                                         </button>
                                     </a>
                                 </td>
-                                <td align="left">
+                                <td >
                                     <button type="submit" class="btn btn-primary">
                                         Save
                                     </button>

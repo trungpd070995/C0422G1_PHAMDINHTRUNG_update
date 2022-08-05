@@ -94,7 +94,7 @@
                         <div class="container-fluid">
                             <tr>
                                 <td>
-                                    <a href="">
+                                    <a href="/view/home.jsp">
                                         <button type="button" class="btn btn-primary">
                                             Back
                                         </button>

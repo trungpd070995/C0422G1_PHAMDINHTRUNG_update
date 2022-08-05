@@ -132,7 +132,7 @@
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="/view/home.jsp">Home</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
@@ -142,7 +142,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" href="customer/list.jsp">Customer</a>
+                            <a class="dropdown-item" href="">Customer</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -190,6 +190,7 @@
                     <th>Số điện thoại</th>
                     <th>Email</th>
                     <th>Địa chỉ</th>
+                    <th>Create</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -207,10 +208,15 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <a class="btn btn-outline-info"href="#">Edit</a>
+                            <a class="btn btn-outline-info"href="/view/customer/create.jsp">Create</a>
                         </td>
                         <td>
-                            <a class="btn btn-outline-danger" href="#">Delete</a>
+                            <a class="btn btn-outline-info"href="/view/customer/edit.jsp">Edit</a>
+                        </td>
+                        <td>
+                            <button onclick="showInfoDelete('${id}','${name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Delete
+                            </button>
                         </td>
                     </tr>
 
@@ -219,6 +225,35 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form action="/?action=delete" method="post">
+            <div class="modal-content">
+                <div class="modal-header btn-danger">
+                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận xoá: </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <input type="text" name="deleteId" id="deleteId">
+                    <span>Bạn có muốn xóa: </span><span id="deleteName"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showInfoDelete(id,name) {
+        document.getElementById("deleteId").value= id;
+        document.getElementById("deleteName").innerText=name;
+    }
+</script>
 
 
 <%--Phần FOOTER--%>

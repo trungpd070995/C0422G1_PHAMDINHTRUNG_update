@@ -126,94 +126,52 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-success " style="position: sticky;top: 0;z-index: 1"   >
-    <div class="container-fluid ">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-success " style="position: sticky; top: 0; z-index: 1">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Home</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Customer
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="customer/list.jsp">Customer</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Customer_Type</a>
-                        </li>
+                        <li><a class="dropdown-item " href="/view/customer/list.jsp" >List</a></li>
+                        <li><a class="dropdown-item" href="#">Customer Type</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Employee</a>
+                    <a class="nav-link text-light"  href="#">Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light"  href="/view/facility/list.jsp">Facility</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light"  href="#">Contract</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Service</a>
+                    <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Contract</a>
-                </li>
+
             </ul>
-
-            <div class="d-flex pdt-3">
+            <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary" type="submit">Search</button>
-            </div>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
     </div>
 </nav>
-
-<%--<div class="header-nav js-header-nav sticky" style="position: sticky;top: 0px; z-index: 1">--%>
-<%--    <div class="container">--%>
-<%--        <nav class="navbar navbar-expand-lg">--%>
-<%--            <div class="navbar-collapse">--%>
-<%--                <ul id="menu-furama-vi" class="menu navbar-nav w-100 js-main-menu">--%>
-<%--                    <li id="nav-menu-item-5006" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                    <a href="https://furamavietnam.com/vi/the-resort/" class="nav-link main-menu-link">HOME</a>--%>
-<%--                    </li>--%>
-
-<%--                    <li id="nav-menu-item-5007" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                        <a href="https://furamavietnam.com/vi/our-rooms/" class="nav-link main-menu-link">CUSTOMER</a>--%>
-<%--                    </li>--%>
-
-<%--                    <li id="nav-menu-item-5008" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                        <a href="https://furamavietnam.com/vi/culinary/" class="nav-link main-menu-link">EMPLOYEE</a>--%>
-<%--                    </li>--%>
-
-<%--                    <li id="nav-menu-item-5009" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                        <a href="https://furamavietnam.com/vi/meeting-and-events/" class="nav-link main-menu-link">SERVICE</a>--%>
-<%--                    </li>--%>
-
-<%--                    <li id="nav-menu-item-5010" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                        <a href="https://furamavietnam.com/vi/spa-and-fitness/" class="nav-link main-menu-link">CONTRACT</a>--%>
-<%--                    </li>--%>
-
-<%--                    <li id="nav-menu-item-5011" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                        <a href="https://furamavietnam.com/vi/recreation/" class="nav-link main-menu-link">GIẢI TRÍ</a>--%>
-<%--                    </li>--%>
-
-<%--                    <li id="nav-menu-item-5012" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-
-<%--                    </li>--%>
-<%--                    <li id="nav-menu-item-5013" class="nav-item  menu-item-even menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page">--%>
-<%--                        <a href="https://furamavietnam.com/vi/furama-special-offers/" class="nav-link main-menu-link">ƯU ĐÃI</a>--%>
-<%--                    </li>--%>
-
-<%--                </ul>--%>
-<%--            </div>--%>
-<%--        </nav>--%>
-<%--    </div>--%>
-<%--</div>--%>
 
 <div class="container-fluid ">
     <div class="row">
