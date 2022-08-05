@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class ClassStudentRepository implements IClassStudentRepository {
 
-    private static Map<Integer, ClassStudent> classMap ;
+    private static final Map<Integer, ClassStudent> classMap ;
 
     static {
         classMap = new HashMap<>();

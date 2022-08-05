@@ -26,7 +26,7 @@
 <p>
     <a href="/classStudent">Back to Class Student list</a>
 </p>
-<form method="post" >
+<form method="post">
     <fieldset>
         <legend>Class information</legend>
         <table>
