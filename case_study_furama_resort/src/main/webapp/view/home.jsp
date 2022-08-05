@@ -30,7 +30,6 @@
             color: white; !important;
         }
 
-
     </style>
 
 </head>
@@ -134,9 +133,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -151,13 +147,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light"  href="#">Employee</a>
+                    <a class="nav-link text-light"  href="/view/employee/list.jsp">Employee</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light"  href="/view/facility/list.jsp">Facility</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light"  href="#">Contract</a>
+                    <a class="nav-link text-light"  href="/view/contract/list.jsp">Contract</a>
                 </li>
 
                 <li class="nav-item">
@@ -167,7 +163,7 @@
             </ul>
             <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-secondary" type="submit">Search</button>
             </form>
         </div>
     </div>
@@ -211,7 +207,7 @@
         <footer class="py-5">
             <div class="row">
                 <div class="col-2">
-                    <h5>Section</h5>
+                    <h5>Customer</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
@@ -222,7 +218,7 @@
                 </div>
 
                 <div class="col-2">
-                    <h5>Section</h5>
+                    <h5>Employee</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
@@ -233,7 +229,7 @@
                 </div>
 
                 <div class="col-2">
-                    <h5>Section</h5>
+                    <h5>Facility</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
                         <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>

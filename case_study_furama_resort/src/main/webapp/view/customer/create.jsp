@@ -19,7 +19,6 @@
         }
     </style>
 
-
 </head>
 <body>
 <div class="container">
@@ -96,7 +95,7 @@
 
                             <tr>
                                 <td >
-                                    <a href="/view/home.jsp">
+                                    <a href="/view/customer/list.jsp">
                                         <button type="button" class="btn btn-primary">
                                             Back
                                         </button>

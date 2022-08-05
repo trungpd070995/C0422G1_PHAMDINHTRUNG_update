@@ -32,6 +32,7 @@
     </style>
 </head>
 <body>
+<div class="container-fluid">
 <div class="header-topline">
     <div class="container">
         <div class="row align-items-center">
@@ -123,52 +124,49 @@
     </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-success " style="position: sticky;top: 0;z-index: 1"   >
-    <div class="container-fluid ">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
-                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-success " style="position: sticky; top: 0; z-index: 1">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" href="/view/home.jsp">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand text-light" href="/view/home.jsp">Home</a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Customer
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" href="">Customer</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Customer_Type</a>
-                        </li>
+                        <li><a class="dropdown-item " href="/view/customer/list.jsp" >List</a></li>
+                        <li><a class="dropdown-item" href="#">Customer Type</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Employee</a>
+                    <a class="nav-link text-light"  href="/view/employee/list.jsp">Employee</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light"  href="/view/facility/list.jsp">Facility</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light"  href="/view/contract/list.jsp">Contract</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Service</a>
+                    <a class="nav-link disabled text-light" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Contract</a>
-                </li>
+
             </ul>
-
-            <div class="d-flex pdt-3">
+            <form class="d-flex mt-3">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-secondary" type="submit">Search</button>
-            </div>
+            </form>
         </div>
     </div>
 </nav>
-
+</div>
 </body>
 </html>
