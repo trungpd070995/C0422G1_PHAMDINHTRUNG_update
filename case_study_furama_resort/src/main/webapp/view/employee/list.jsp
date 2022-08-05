@@ -5,7 +5,8 @@
   Time: 11:15 AM
   To change this template use File | Settings | File Templates.
 --%>
-<<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-<%@include file="../include/header.jsp"%>
+<%@include file="../include/header.jsp" %>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 border border">
@@ -57,13 +58,21 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <a class="btn btn-outline-info"href="/view/employee/create.jsp">Create</a>
+                        <!-- Button modal thêm mới nhân viên -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-1">
+                            Create
+                        </button>
                     </td>
                     <td>
-                        <a class="btn btn-outline-info"href="/view/employee/edit.jsp">Edit</a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-2">
+                            Edit
+                        </button>
                     </td>
                     <td>
-                        <button onclick="showInfoDelete('${id}','${name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button onclick="showInfoDelete('${id}','${name}')" type="button" class="btn btn-danger"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete
                         </button>
                     </td>
@@ -75,7 +84,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Xoá nhân viên-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <form action="" method="post">
@@ -97,17 +106,188 @@
     </div>
 </div>
 
+
+<!-- Modal thêm mới nhân viên-->
+<div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel-1">ADD NEW EMPLOYEE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2 align="center">THÊM MỚI NHÂN VIÊN</h2>
+                <form method="post">
+
+                    <table class="table" cellpadding="5">
+                        <tr>
+                            <th>Customer Type:</th>
+                            <td>
+                                <select name="customerTypeID" id="customerTypeID">
+                                    <option value="">Chọn loại khách</option>
+
+                                </select>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td>
+                                <input type="text" name="name" id="name" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Birthday:</th>
+                            <td>
+                                <input type="date" name="birthDay" id="birthDay" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ID Card:</th>
+                            <td>
+                                <input type="text" name="idCard" id="idCard" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Salary:</th>
+                            <td>
+                                <input type="text" name="salary" id="salary" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Phone:</th>
+                            <td>
+                                <input type="text" name="phone" id="phone" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>
+                                <input type="text" name="email" id="email" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Address:</th>
+                            <td>
+                                <input type="text" name="address" id="address" size="45"/>
+
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal chỉnh sửa nhân viên-->
+<div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel-2">EDIT EMPLOYEE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2 align="center">CHỈNH SỬA NHÂN VIÊN</h2>
+                <form method="post">
+
+                    <table class="table" cellpadding="5">
+                        <tr>
+                            <th>Customer Type:</th>
+                            <td>
+                                <select name="customerTypeID" id="customerTypeID-Edit">
+                                    <option value="">Chọn loại khách</option>
+
+                                </select>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td>
+                                <input type="text" name="name" id="name-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Birthday:</th>
+                            <td>
+                                <input type="date" name="birthDay" id="birthDay-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>ID Card:</th>
+                            <td>
+                                <input type="text" name="idCard" id="idCard-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Salary:</th>
+                            <td>
+                                <input type="text" name="salary" id="salary-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Phone:</th>
+                            <td>
+                                <input type="text" name="phone" id="phone-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>
+                                <input type="text" name="email" id="email-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Address:</th>
+                            <td>
+                                <input type="text" name="address" id="address-Edit" size="45"/>
+
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <script>
-    function showInfoDelete(id,name) {
-        document.getElementById("deleteId").value= id;
-        document.getElementById("deleteName").innerText=name;
+    function showInfoDelete(id, name) {
+        document.getElementById("deleteId").value = id;
+        document.getElementById("deleteName").innerText = name;
     }
 </script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 </html>
