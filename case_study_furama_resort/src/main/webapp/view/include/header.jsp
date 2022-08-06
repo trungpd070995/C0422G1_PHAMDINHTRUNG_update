@@ -138,8 +138,8 @@
                         Customer
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item " href="/view/customer/list.jsp" >List</a></li>
-                        <li><a class="dropdown-item" href="#">Customer Type</a></li>
+                        <li><a class="dropdown-item " href="/customer" >List</a></li>
+                        <li><a class="dropdown-item" href="/customerType">Customer Type</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>

@@ -160,7 +160,6 @@
     </div>
 </div>
 
-
 <!-- Modal Danh sách dịch vụ đi kèm-->
 <div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">

@@ -1,89 +1,94 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Trung
-  Date: 8/4/2022
-  Time: 4:38 PM
-  To change this template use File | Settings | File Templates.
---%>
-<<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html lang="en">
 <head>
-    <title>List Customer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Furama Resort</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<%--    <style>--%>
+    <link rel="stylesheet" href="/boostrap/datatables/css/dataTables.bootstrap4.min.css"/>
+    <style>
+        a:hover {
+            font-weight: bold;
+        }
+    </style>
 
-<%--        .row {--%>
-<%--            box-sizing: border-box;--%>
-<%--        }--%>
-
-<%--        .sticky {--%>
-<%--            display: block;--%>
-<%--        }--%>
-
-<%--        .bg-success {--%>
-<%--            background-color: #046056 !important;--%>
-<%--        }--%>
-
-<%--        .nav-link {--%>
-<%--            color: white; !important;--%>
-<%--        }--%>
-
-
-<%--    </style>--%>
 
 </head>
 <body>
-<%@include file="../include/header.jsp"%>
-
+<%@include file="../include/header.jsp" %>
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 border border">
             <h3 style="text-align: center"> DANH SÁCH KHÁCH HÀNG </h3>
+            <div class="row" style="text-align: center">
+                <h2>
+                    <a href="/customer?action=create">
+                        <button type="button" class="btn btn-primary">Add New Customer</button>
+                    </a>
+                </h2>
+            </div>
 
-            <table class="table text-center table-striped" id="table">
+            <table class="table text-center table-striped" id="tableCustomer" style="width: 100%">
                 <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Loại Khách Hàng</th>
-                    <th>Tên KH</th>
-                    <th>Ngày Sinh</th>
-                    <th>Giới tính</th>
-                    <th>Mã KH</th>
-                    <th>Số điện thoại</th>
+                <tr class="table-success">
+                    <th>ID</th>
+                    <th>Customer Type</th>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>ID Card</th>
+                    <th>Phone</th>
                     <th>Email</th>
-                    <th>Địa chỉ</th>
-                    <th>Create</th>
+                    <th>Address</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
-
+                <c:forEach var="customer" items="${customerList}">
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+
+                        <td><c:out value="${customer.id}"/></td>
+
+                        <c:forEach var="customerType" items="${customerTypeList}">
+                            <c:if test="${customerType.customerTypeId == customer.customerTypeID}">
+                                <td>
+                                    <c:out value="${customerType.customerTypeName}"/>
+                                </td>
+                            </c:if>
+                        </c:forEach>
+
+                        <td><c:out value="${customer.name}"/></td>
+                        <td><c:out value="${customer.birthDay}"/></td>
+
+                        <c:if test="${customer.gender == 1}">
+                            <td>Male</td>
+                        </c:if>
+                        <c:if test="${customer.gender == 0}">
+                            <td>Female</td>
+                        </c:if>
+
+                        <td><c:out value="${customer.idCard}"/></td>
+                        <td><c:out value="${customer.phone}"/></td>
+                        <td><c:out value="${customer.email}"/></td>
+                        <td><c:out value="${customer.address}"/></td>
                         <td>
-                            <a class="btn btn-outline-info"href="/view/customer/create.jsp">Create</a>
+                            <a href="/customer?action=edit&id=${customer.id}">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                            </a>
                         </td>
                         <td>
-                            <a class="btn btn-outline-info"href="/view/customer/edit.jsp">Edit</a>
-                        </td>
-                        <td>
-                            <button onclick="showInfoDelete('${id}','${name}')" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary"
+                                    onclick="infoDelete('${customer.id}','${customer.name}')"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Delete
                             </button>
                         </td>
                     </tr>
-
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -93,36 +98,39 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form action="/?action=delete" method="post">
+        <form action="/customer" method="post">
             <div class="modal-content">
-                <div class="modal-header btn-danger">
-                    <h5 class="modal-title" id="exampleModalLabel">Xác nhận xoá: </h5>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body ">
-                    <input type="text" name="deleteId" id="deleteId">
-                    <span>Bạn có muốn xóa: </span><span id="deleteName"></span>
+                <div class="modal-body">
+                    <input type="text" hidden name="idDelete" id="idDelete">
+                    <input type="text" hidden name="action" value="delete">
+                    <span>Bạn có muốn xóa khách hàng: </span>
+                    <span id="nameDelete"></span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Delete</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
-
 <script>
-    function showInfoDelete(id,name) {
-        document.getElementById("deleteId").value= id;
-        document.getElementById("deleteName").innerText=name;
+    function infoDelete(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerText = name;
     }
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
