@@ -152,13 +152,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="/view/employee/list.jsp">Employee</a>
+                    <a class="nav-link text-light" href="#">Employee</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-light" href="/facility">Facility</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="/view/contract/list.jsp">Contract</a>
+                    <a class="nav-link text-light" href="#">Contract</a>
                 </li>
 
                 <li class="nav-item">

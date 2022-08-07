@@ -14,8 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
     <style>
 
         .row {
@@ -145,6 +145,7 @@
                         </td>
                     </tr>
                 </c:if>
+
                 <c:if test="${facility.facilityTypeId == 3}">
                     <tr>
                         <td><c:out value="${facility.id}"/></td>
@@ -152,16 +153,19 @@
                         <td><c:out value="${facility.area}"/></td>
                         <td><c:out value="${facility.cost}"/></td>
                         <td><c:out value="${facility.maxPeople}"/></td>
+
                         <c:forEach var="rentType" items="${rentTypeList}">
                             <c:if test="${rentType.rentTypeId == facility.rentTypeId}">
                                 <td><c:out value="${rentType.rentTypeName}"/></td>
                             </c:if>
                         </c:forEach>
+
                         <c:forEach var="facilityType" items="${facilityTypeList}">
                             <c:if test="${facilityType.facilityTypeId == facility.facilityTypeId}">
                                 <td><c:out value="${facilityType.facilityTypeName}"/></td>
                             </c:if>
                         </c:forEach>
+
                         <td>N/A</td>
                         <td>N/A</td>
                         <td>N/A</td>
@@ -221,13 +225,13 @@
 
 <%--Data Table phân trang--%>
 <script>
-    $(document).ready(function() {
-        $('#tableFacility').dataTable( {
+    $(document).ready(function () {
+        $('#tableFacility').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
             "pageLength": 5
-        } );
-    } );
+        });
+    });
 </script>
 
 <script src="jquery/jquery-3.5.1.min.js"></script>
