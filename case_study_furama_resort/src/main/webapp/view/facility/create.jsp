@@ -20,16 +20,16 @@
 
     </style>
 
-
 </head>
 <body>
-<%@include file="../include/header.jsp"%>
+<%@include file="../include/header.jsp" %>
+
 <div class="container">
     <div class="col-lg-12 mr-20 mt-4" style="width: 100%">
         <div class="container-fluid">
             <div class="row">
-                <h2 align="center">THÊM MỚI DỊCH VỤ</h2>
-                <form method="">
+                <h2 align="center">Add New Facility</h2>
+                <form method="post">
 
                     <table class="table" cellpadding="5">
                         <tr>
@@ -65,16 +65,20 @@
                             <td>
                                 <select name="rentTypeId">
                                     <option value="">Chọn kiểu thuê</option>
-
+                                    <c:forEach items="${rentTypeList}" var="item">
+                                        <option value="${item.rentTypeId}">${item.rentTypeName}</option>
+                                    </c:forEach>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <th>Facility type:</th>
                             <td>
-                                <select name="facilityTypeId" id="facilityTypeId" >
+                                <select name="facilityTypeId" id="facilityTypeId" onchange="displayBonus(this)">
                                     <option value="">Chọn loại dịch vụ</option>
-
+                                    <c:forEach items="${facilityTypeList}" var="item">
+                                        <option value="${item.facilityTypeId}">${item.facilityTypeName}</option>
+                                    </c:forEach>
                                 </select>
                             </td>
                         </tr>
@@ -82,7 +86,7 @@
                         <tr hidden id="standardRoom">
                             <th>Standard Room:</th>
                             <td>
-                                <input type="text" name="standardRoom"  size="45"/>
+                                <input type="text" name="standardRoom" size="45"/>
 
                             </td>
                         </tr>
@@ -116,7 +120,7 @@
                         </tr>
                         <tr>
                             <td align="center">
-                                <a href="/view/facility/list.jsp">
+                                <a href="/facility">
                                     <button type="button" class="btn btn-primary">
                                         Back
                                     </button>
@@ -134,11 +138,42 @@
         </div>
     </div>
 </div>
-</div>
-<%@include file="../include/footer.jsp"%>
+
+<script>
+    function displayBonus(facilityTypeId) {
+        if (facilityTypeId.value == 1) {
+            document.getElementById("standardRoom").hidden = false;
+            document.getElementById("otherDescription").hidden = false;
+            document.getElementById("poolArea").hidden = false;
+            document.getElementById("numberFloor").hidden = false;
+            document.getElementById("facilityFree").hidden = true;
+        } else if (facilityTypeId.value == 2) {
+            document.getElementById("standardRoom").hidden = false;
+            document.getElementById("otherDescription").hidden = false;
+            document.getElementById("poolArea").hidden = true;
+            document.getElementById("numberFloor").hidden = false;
+            document.getElementById("facilityFree").hidden = true;
+        } else if (facilityTypeId.value == 3) {
+            document.getElementById("standardRoom").hidden = true;
+            document.getElementById("otherDescription").hidden = true;
+            document.getElementById("poolArea").hidden = true;
+            document.getElementById("numberFloor").hidden = true;
+            document.getElementById("facilityFree").hidden = false;
+        } else {
+            document.getElementById("standardRoom").hidden = true;
+            document.getElementById("otherDescription").hidden = true;
+            document.getElementById("poolArea").hidden = true;
+            document.getElementById("numberFloor").hidden = true;
+            document.getElementById("facilityFree").hidden = true;
+        }
+    }
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 </html>

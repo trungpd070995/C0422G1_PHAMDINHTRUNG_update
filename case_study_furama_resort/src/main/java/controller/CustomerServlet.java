@@ -24,6 +24,10 @@ public class CustomerServlet extends HttpServlet {
     private final ICustomerTypeService iCustomerTypeService = new CustomerTypeService();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
+
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -46,6 +50,10 @@ public class CustomerServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
+
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -108,7 +116,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
-        
+
         List<CustomerType> customerTypeList = iCustomerTypeService.selectAllCustomerType();
         request.setAttribute("customerTypeList", customerTypeList);
 

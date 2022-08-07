@@ -27,7 +27,8 @@
         }
 
         .nav-link {
-            color: white; !important;
+            color: white;
+        !important;
         }
 
     </style>
@@ -128,32 +129,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-success " style="position: sticky; top: 0; z-index: 1">
     <div class="container-fluid">
         <a class="navbar-brand text-light" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         Customer
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item " href="/view/customer/list.jsp" >List</a></li>
-                        <li><a class="dropdown-item" href="#">Customer Type</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item " href="/customer">List</a></li>
+                        <li><a class="dropdown-item" href="/customerType">Customer Type</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-light"  href="/view/employee/list.jsp">Employee</a>
+                    <a class="nav-link text-light" href="/view/employee/list.jsp">Employee</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light"  href="/view/facility/list.jsp">Facility</a>
+                    <a class="nav-link text-light" href="/facility">Facility</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light"  href="/view/contract/list.jsp">Contract</a>
+                    <a class="nav-link text-light" href="/view/contract/list.jsp">Contract</a>
                 </li>
 
                 <li class="nav-item">
@@ -175,20 +180,25 @@
             <div id="carouselExampleControls-1" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://media.baodautu.vn/Images/ngoctan/2017/08/29/Furama_Resort_Danang_-_Ocean_Pool_2.JPG" class="d-block w-100" alt="..." width="240px" height="500px"/>
+                        <img src="https://media.baodautu.vn/Images/ngoctan/2017/08/29/Furama_Resort_Danang_-_Ocean_Pool_2.JPG"
+                             class="d-block w-100" alt="..." width="240px" height="500px"/>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://bazantravel.com/cdn/medias/uploads/53/53114-furama-resort-da-nang-11.jpg" class="d-block w-100" alt="..." width="240px" height="500px">
+                        <img src="https://bazantravel.com/cdn/medias/uploads/53/53114-furama-resort-da-nang-11.jpg"
+                             class="d-block w-100" alt="..." width="240px" height="500px">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://www.vmgfashion.com/Data/Sites/1/media/default/img/%C4%90%E1%BB%91i%20t%C3%A1c/furama-%C4%91%C3%A0-n%E1%BA%B5ng.jpg" class="d-block w-100" alt="..." width="240px" height="500px">
+                        <img src="https://www.vmgfashion.com/Data/Sites/1/media/default/img/%C4%90%E1%BB%91i%20t%C3%A1c/furama-%C4%91%C3%A0-n%E1%BA%B5ng.jpg"
+                             class="d-block w-100" alt="..." width="240px" height="500px">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -196,8 +206,6 @@
         </div>
     </div>
 </div>
-
-<div class="vc_row-full-width vc_clearfix"></div>
 
 <%--Phần FOOTER--%>
 
@@ -255,9 +263,21 @@
             <div class="d-flex justify-content-between py-4 my-4 border-top">
                 <p>© 2021 Company, Inc. All rights reserved.</p>
                 <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a></li>
+                    <li class="ms-3"><a class="link-dark" href="#">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a></li>
+                    <li class="ms-3"><a class="link-dark" href="#">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                    </a></li>
                 </ul>
             </div>
         </footer>
@@ -265,9 +285,11 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
