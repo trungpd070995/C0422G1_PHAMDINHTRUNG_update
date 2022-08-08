@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -123,30 +124,36 @@ public class CustomerServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
         int customerTypeID = Integer.parseInt(request.getParameter("customerTypeID"));
+
         String name = request.getParameter("name");
 
         String birthDay = request.getParameter("birthDay");
+
         int gender = Integer.parseInt(request.getParameter("gender"));
 
         String idCard = request.getParameter("idCard");
+
         String phone = request.getParameter("phone");
 
         String email = request.getParameter("email");
+
         String address = request.getParameter("address");
 
         Customer customer = new Customer(id, customerTypeID, name, birthDay, gender, idCard, phone, email, address);
-
+        Map<String, String> error = null;
         try {
-            iCustomerService.updateCustomer(customer);
+            error = iCustomerService.updateCustomer(customer);
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+
         request.setAttribute("customer", customer);
 
-        try {
-            request.getRequestDispatcher("view/customer/edit.jsp").forward(request, response);
-        } catch (ServletException | IOException e) {
-            e.printStackTrace();
+        if (error.isEmpty()) {
+            request.setAttribute("message", "Cập nhật thành công");
+        } else {
+            request.setAttribute("message", "Cập nhật thất bại");
+            request.setAttribute("error", error);
         }
     }
 
@@ -183,11 +190,21 @@ public class CustomerServlet extends HttpServlet {
 
 
         Customer customer = new Customer(id, customerTypeID, name, birthDay, gender, idCard, phone, email, address);
+
+        Map<String, String> error = null;
+
         try {
-            iCustomerService.insertCustomer(customer);
+            error = iCustomerService.insertCustomer(customer);
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+        if (error.isEmpty()) {
+            request.setAttribute("message", "Thêm mới thành công");
+        } else {
+            request.setAttribute("message", "Thêm mới thất bại");
+            request.setAttribute("error", error);
+        }
+
         try {
             request.getRequestDispatcher("view/customer/create.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
@@ -197,6 +214,20 @@ public class CustomerServlet extends HttpServlet {
 
 
     private void search(HttpServletRequest request, HttpServletResponse response) {
+        String keySearch = request.getParameter("keySearch");
+
+        List<Customer> customerList = iCustomerService.search(keySearch);
+        List<CustomerType> customerTypeList = iCustomerTypeService.selectAllCustomerType();
+
+        request.setAttribute("customerList", customerList);
+        request.setAttribute("customerTypeList", customerTypeList);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {

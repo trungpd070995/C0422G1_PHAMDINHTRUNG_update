@@ -278,19 +278,3 @@ from contract
  join attach_facility on attach_facility.attach_facility_id = contract_detail.attach_facility_id 
  where contract.contract_id = 1;
  
-delimiter //
-create trigger save_account
-before insert
-on employee for each row
-begin
-     insert into `user` (`username`, `password`)
-     values ( new.employee_email, '123456') ;
-
-    if new.`username`  is null then 
-         set new.`username` = new.employee_email ;
-    end if;
-end;
-// delimiter ;   
-
-insert into employee (employee_id, employee_email)
-values (20,'levanan@gmail.com');

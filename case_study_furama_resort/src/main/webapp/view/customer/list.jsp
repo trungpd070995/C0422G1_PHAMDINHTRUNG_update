@@ -10,13 +10,11 @@
 
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
-
     <style>
         a:hover {
             font-weight: bold;
         }
     </style>
-
 
 </head>
 <body>
@@ -32,8 +30,17 @@
                     </a>
                 </h2>
             </div>
+            <form class="row g-3" action="/customer" method="get">
+                <div class="col-auto">
+                    <input type="text" hidden name="action" value="search">
+                    <input type="text" class="form-control" name="keySearch" placeholder="Search Anything">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Search</button>
+                </div>
+            </form>
 
-            <table class="table text-center table-striped" id="tableCustomer" style="width: 100%">
+            <table class="table table-success text-center table-striped" id="tableCustomer" style="width: 100%">
                 <thead>
                 <tr class="table-success">
                     <th>ID</th>
@@ -103,7 +110,7 @@
     <div class="modal-dialog">
         <form action="/customer" method="post">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header btn-danger">
                     <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -115,7 +122,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
             </div>
         </form>
@@ -130,7 +137,9 @@
     }
 </script>
 
-<%--Data Table phân trang--%>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#tableCustomer').dataTable( {
@@ -140,10 +149,6 @@
         } );
     } );
 </script>
-
-<script src="jquery/jquery-3.5.1.min.js"></script>
-<script src="datatables/js/jquery.dataTables.min.js"></script>
-<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

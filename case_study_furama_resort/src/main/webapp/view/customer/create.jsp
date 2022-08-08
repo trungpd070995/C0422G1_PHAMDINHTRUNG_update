@@ -27,16 +27,16 @@
             <div class="row">
                 <h2 align="center">THÊM MỚI KHÁCH HÀNG</h2>
                 <form method="post">
-
-                    <table class="table" cellpadding="5">
+                    <table class="table table-success" cellpadding="5">
                         <tr>
                             <th>Customer Type:</th>
                             <td>
                                 <select name="customerTypeID" id="customerTypeID">
-                                    <option value="">Chọn loại khách</option>
+                                    <option value="">Select CustomerType</option>
                                     <c:forEach items="${customerTypeList}" var="customerType">
                                         <option value="${customerType.customerTypeId}">${customerType.customerTypeName}</option>
                                     </c:forEach>
+                                    <p class="text-danger">${error.get("type")}</p>
                                 </select>
                             </td>
                         </tr>
@@ -44,7 +44,7 @@
                             <th>Name:</th>
                             <td>
                                 <input type="text" name="name" id="name" size="45"/>
-
+                                <p class="text-danger">${error.get("name")}</p>
                             </td>
                         </tr>
                         <tr>
@@ -58,39 +58,38 @@
                             <th>Gender:</th>
                             <td>
                                 <select name="gender" id="gender">
-                                    <option value="">Chọn giới tính</option>
+                                    <option value="">Seclect Gender</option>
                                     <option value="0">Female</option>
                                     <option value="1">Male</option>
                                 </select>
-
                             </td>
                         </tr>
                         <tr>
                             <th>ID Card:</th>
                             <td>
                                 <input type="text" name="idCard" id="idCard" size="45"/>
-
+                                <p class="text-danger">${error.get("idCard")}</p>
                             </td>
                         </tr>
                         <tr>
                             <th>Phone:</th>
                             <td>
                                 <input type="text" name="phone" id="phone" size="45"/>
-
+                                <p class="text-danger">${error.get("phone")}</p>
                             </td>
                         </tr>
                         <tr>
                             <th>Email:</th>
                             <td>
                                 <input type="text" name="email" id="email" size="45"/>
-
+                                <p class="text-danger">${error.get("email")}</p>
                             </td>
                         </tr>
                         <tr>
                             <th>Address:</th>
                             <td>
                                 <input type="text" name="address" id="address" size="45"/>
-
+                                <p class="text-danger">${error.get("address")}</p>
                             </td>
                         </tr>
 

@@ -16,7 +16,7 @@ public class CustomerRepository implements ICustomerRepository {
     private static final String SELECT_ALL= "select * from customer";
     private static final String UPDATE_CUSTOMER_SQL = "update customer set customer_type_id = ?, customer_name = ?, customer_birthday = ?, customer_gender = ?, customer_id_card = ?, customer_phone = ?,  customer_email = ?, customer_address = ? where customer_id = ?;";
     private static final String DELETE_CUSTOMER_SQL = "update customer set flag = 1 where customer_id = ?;";
-    private static final String SEARCH_SQL = "select * from customer where customer_name like ? or customer_birthday like ? or customer_id_card like ? or customer_phone like ? or customer_email like ? or customer_address like ?;";
+    private static final String SEARCH_SQL = "select * from customer where customer_name like ? ;";
 
     @Override
     public List<Customer> selectAll() {
@@ -186,11 +186,7 @@ public class CustomerRepository implements ICustomerRepository {
              PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_SQL)) {
 
             preparedStatement.setString(1, "%" + keySearch + "%");
-            preparedStatement.setString(2, "%" + keySearch + "%");
-            preparedStatement.setString(3, "%" + keySearch + "%");
-            preparedStatement.setString(4, "%" + keySearch + "%");
-            preparedStatement.setString(5, "%" + keySearch + "%");
-            preparedStatement.setString(6, "%" + keySearch + "%");
+
 
             ResultSet rs = preparedStatement.executeQuery();
 

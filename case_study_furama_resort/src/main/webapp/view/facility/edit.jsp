@@ -197,9 +197,6 @@
                                                 <option value="${facilityType.facilityTypeId}"
                                                         selected>${facilityType.facilityTypeName}</option>
                                             </c:if>
-                                            <c:if test="${rentType.facilityTypeId != house.facilityTypeId}">
-                                                <option value="${facilityType.facilityTypeId}">${facilityType.facilityTypeName}</option>
-                                            </c:if>
                                         </c:forEach>
                                     </select>
                                 </td>
@@ -369,25 +366,32 @@
 </div>
 
 <script>
+
     function displayBonus(facilityTypeId) {
+        //Villa
         if (facilityTypeId.value == 1) {
             document.getElementById("standardRoom").hidden = false;
             document.getElementById("otherDescription").hidden = false;
             document.getElementById("poolArea").hidden = false;
             document.getElementById("numberFloor").hidden = false;
             document.getElementById("facilityFree").hidden = true;
+
+            //House
         } else if (facilityTypeId.value == 2) {
             document.getElementById("standardRoom").hidden = false;
             document.getElementById("otherDescription").hidden = false;
             document.getElementById("poolArea").hidden = true;
             document.getElementById("numberFloor").hidden = false;
             document.getElementById("facilityFree").hidden = true;
+
+            //Room
         } else if (facilityTypeId.value == 3) {
             document.getElementById("standardRoom").hidden = true;
             document.getElementById("otherDescription").hidden = true;
             document.getElementById("poolArea").hidden = true;
             document.getElementById("numberFloor").hidden = true;
             document.getElementById("facilityFree").hidden = false;
+
         } else {
             document.getElementById("standardRoom").hidden = true;
             document.getElementById("otherDescription").hidden = true;

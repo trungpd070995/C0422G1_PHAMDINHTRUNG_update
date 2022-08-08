@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -20,7 +21,7 @@
             <div class="row">
                 <h2 align="center">Edit Customer</h2>
                 <form method="post">
-                    <table class="table" cellpadding="5">
+                    <table class="table table-success" cellpadding="5">
                         <tr>
                             <th>ID:</th>
                             <td>
@@ -42,7 +43,7 @@
                             <th>Name:</th>
                             <td>
                                 <input type="text" name="name" id="name" size="45" value="${customer.name}"/>
-
+                                <p class="text-danger">${error.get("name")}</p>
                             </td>
                         </tr>
                         <tr>
@@ -74,28 +75,28 @@
                             <th>ID Card:</th>
                             <td>
                                 <input type="text" name="idCard" id="idCard" size="45" value="${customer.idCard}"/>
-
+                                <p class="text-danger">${error.get("idCard")}</p>
                             </td>
                         </tr>
                         <tr>
                             <th>Phone:</th>
                             <td>
                                 <input type="text" name="phone" id="phone" size="45" value="${customer.phone}"/>
-
+                                <p class="text-danger">${error.get("phone")}</p>
                             </td>
                         </tr>
                         <tr>
                             <th>Email:</th>
                             <td>
                                 <input type="text" name="email" id="email" size="45" value="${customer.email}"/>
-
+                                <p class="text-danger">${error.get("email")}</p>
                             </td>
                         </tr>
                         <tr>
                             <th>Address:</th>
                             <td>
                                 <input type="text" name="address" id="address" size="45" value="${customer.address}"/>
-
+                                <p class="text-danger">${error.get("address")}</p>
                             </td>
                         </tr>
 

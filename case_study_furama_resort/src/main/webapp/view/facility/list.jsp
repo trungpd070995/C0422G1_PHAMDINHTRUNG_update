@@ -14,8 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
     <style>
 
         .row {
@@ -39,6 +39,7 @@
                 </a>
             </h2>
         </div>
+
         <form class="row g-3" action="/facility" method="get">
             <div class="col-auto">
                 <input type="text" hidden name="action" value="search">
@@ -48,6 +49,7 @@
                 <button type="submit" class="btn btn-primary mb-3">Search</button>
             </div>
         </form>
+
         <table class="table table-striped table-bordered" id="tableFacility" style="width:100%">
             <thead>
             <tr class="table-success">
@@ -99,7 +101,7 @@
                         </td>
                         <td>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary"
+                            <button type="button" class="btn btn-danger"
                                     onclick="infoDelete('${facility.id}','${facility.name}')"
                                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Delete
@@ -137,7 +139,7 @@
                         </td>
                         <td>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary"
+                            <button type="button" class="btn btn-danger"
                                     onclick="infoDelete('${facility.id}','${facility.name}')"
                                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Delete
@@ -178,7 +180,7 @@
                         </td>
                         <td>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary"
+                            <button type="button" class="btn btn-danger"
                                     onclick="infoDelete('${facility.id}','${facility.name}')"
                                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Delete
@@ -223,20 +225,19 @@
     }
 </script>
 
-<%--Data Table phân trang--%>
-<script>
-    $(document).ready(function () {
-        $('#tableFacility').dataTable({
-            "dom": 'lrtip',
-            "lengthChange": false,
-            "pageLength": 5
-        });
-    });
-</script>
-
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="datatables/js/jquery.dataTables.min.js"></script>
 <script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tableFacility').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+</script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

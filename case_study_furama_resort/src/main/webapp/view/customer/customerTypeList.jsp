@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: Trung
@@ -15,24 +14,30 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<%@include file="../include/header.jsp"%>
+<%@include file="../include/header.jsp" %>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 border border">
-            <table class="table text-center table-striped" id="tableCustomer" style="width: 100%">
+            <h3 style="text-align: center">Customer Type</h3>
+            <table class="table table-success text-center table-striped" id="tableCustomer" style="width: 100%">
+
                 <tr class="bg-frm-darkblue">
                     <th scope="col" class="text-red">Customer Type ID</th>
                     <th scope="col" class="text-red">Customer Type Name</th>
                 </tr>
+
                 <c:forEach items="${customerTypeList}" var="customerType" varStatus="status">
                     <tr>
                         <td>${customerType.customerTypeId}</td>
                         <td>${customerType.customerTypeName}</td>
                     </tr>
                 </c:forEach>
+
             </table>
         </div>
     </div>
 </div>
+
 </body>
 </html>
